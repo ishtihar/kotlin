@@ -1,14 +1,39 @@
-//TIP To <b>Run</b> code, press <shortcut actionId="Run"/> or
-// click the <icon src="AllIcons.Actions.Execute"/> icon in the gutter.
-fun main() {
-    val name = "Kotlin"
-    //TIP Press <shortcut actionId="ShowIntentionActions"/> with your caret at the highlighted text
-    // to see how IntelliJ IDEA suggests fixing it.
-    println("Hello, " + name + "!")
+import java.util.Scanner
 
-    for (i in 1..5) {
-        //TIP Press <shortcut actionId="Debug"/> to start debugging your code. We have set one <icon src="AllIcons.Debugger.Db_set_breakpoint"/> breakpoint
-        // for you, but you can always add more by pressing <shortcut actionId="ToggleLineBreakpoint"/>.
-        println("i = $i")
+/**
+ * A simple command-line calculator that performs basic arithmetic operations.
+ *
+ * The program prompts the user for two numbers and an operator. Supported
+ * operators are `+`, `-`, `*`, and `/`. Division by zero is checked and will
+ * result in a message instead of an exception.
+ */
+fun main() {
+    val scanner = Scanner(System.`in`)
+
+    print("Enter first number: ")
+    val first = scanner.nextDouble()
+
+    print("Enter operator (+, -, *, /): ")
+    val operator = scanner.next()
+
+    print("Enter second number: ")
+    val second = scanner.nextDouble()
+
+    val result = when (operator) {
+        "+" -> first + second
+        "-" -> first - second
+        "*" -> first * second
+        "/" ->
+            if (second != 0.0) first / second else {
+                println("Cannot divide by zero.")
+                return
+            }
+        else -> {
+            println("Unsupported operator: $operator")
+            return
+        }
     }
+
+    println("Result: $result")
 }
+
