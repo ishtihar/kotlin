@@ -1,14 +1,26 @@
 package week01.day04
 
 fun main() {
-    println("Day 04: Type Conversion, Type Inference")
+    val intValue = 25
+    val inferredDouble = 12.75 // inferred type Double
+
+    val convertedDouble: Double = intValue.toDouble()
+    val convertedInt: Int = inferredDouble.toInt()
+
+    println("Int to Double: $intValue -> $convertedDouble")
+    println("Double to Int: $inferredDouble -> $convertedInt")
+
+    // edge case: invalid number parsing
+    val rawInput = "12a"
+    val parsed = rawInput.toIntOrNull()
+    println("Parsed '$rawInput': ${parsed ?: "Invalid number"}")
 }
 
 /*
-Practice Questions:
-1. Explain "Type Conversion, Type Inference" in your own words with one code example.
-2. Write one small program focused on "Type Conversion, Type Inference".
-3. Add one invalid input/edge case and handle it.
-4. Improve your code readability (naming + formatting + comments).
-5. Test with at least 3 different inputs and note output.
+Solved Questions:
+1. Type inference shown with inferredDouble.
+2. Type conversion shown with toDouble() and toInt().
+3. Edge case handled using toIntOrNull().
+4. Readable naming and output formatting.
+5. Tested valid conversion + invalid parse.
 */

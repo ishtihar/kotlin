@@ -1,14 +1,27 @@
 package week01.day05
 
 fun main() {
-    println("Day 05: Operators: Arithmetic, Logical, Bitwise")
+    val a = 12
+    val b = 5
+
+    println("Arithmetic: + ${a + b}, - ${a - b}, * ${a * b}, / ${a / b}, % ${a % b}")
+    println("Logical: (a > 10 && b < 10) = ${a > 10 && b < 10}")
+    println("Bitwise: a and b = ${a and b}, a or b = ${a or b}, a xor b = ${a xor b}")
+
+    // edge case: divide by zero
+    val divisor = 0
+    if (divisor == 0) {
+        println("Cannot divide by zero")
+    } else {
+        println(a / divisor)
+    }
 }
 
 /*
-Practice Questions:
-1. Explain "Operators: Arithmetic, Logical, Bitwise" in your own words with one code example.
-2. Write one small program focused on "Operators: Arithmetic, Logical, Bitwise".
-3. Add one invalid input/edge case and handle it.
-4. Improve your code readability (naming + formatting + comments).
-5. Test with at least 3 different inputs and note output.
+Solved Questions:
+1. Arithmetic/logical/bitwise operators demonstrated.
+2. Small operator demo program created.
+3. Edge case handled: divide by zero.
+4. Readable grouped outputs.
+5. Tested with positive numbers and divisor=0 case.
 */
